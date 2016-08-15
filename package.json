@@ -1,0 +1,23 @@
+{
+  "name": "validar-electron",
+  "version": "1.0.0",
+  "description": "A container application that allows for scanning from USB devices and parsing of barcodes including 1D, QR Codes, and PDF417.",
+  "main": "main.js",
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "node-hid": "^0.5.1",
+    "pretty-bytes": "^2.0.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^7.5.1",
+    "electron-prebuilt": "^0.35.2",
+    "electron-rebuild": "^1.1.5"
+  },
+  "scripts": {
+    "start": "electron main.js",
+    "postinstall": "electron-rebuild --pre-gyp-fix --force",
+    "package": "electron-packager ./ validar-electron --platform=win32 --arch=all --out dist/ValidarElectron"
+  },
+  "author": "Curtis Rodgers",
+  "license": "MIT"
+}
